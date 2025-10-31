@@ -1,4 +1,4 @@
-class ExpenseModel {
+export class ExpenseModel {
     constructor() {
         this.expenses = [];
         this.currentFilter = 'all';

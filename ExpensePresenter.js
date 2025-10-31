@@ -1,4 +1,4 @@
-class ExpensePresenter {
+export class ExpensePresenter {
     constructor(model, view) {
         this.model = model;
         this.view = view;

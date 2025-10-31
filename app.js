@@ -1,20 +1,21 @@
+import { ExpenseModel } from './ExpenseModel.js';
+import { ExpenseView } from './ExpenseView.js';
+import { ExpensePresenter } from './ExpensePresenter.js';
+import { mockExpenses } from './mock.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     try {
-
         const model = new ExpenseModel();
         const view = new ExpenseView();
         const presenter = new ExpensePresenter(model, view);
 
-        console.log('Приложение учета расходов успешно запущено');
+        mockExpenses.forEach(expense => {
+            model.addExpense(expense);
+        });
 
+        presenter.updateView();
 
-        setTimeout(() => {
-            model.addExpense({ name: "Продукты", amount: 1500, category: "Food" });
-            model.addExpense({ name: "Такси", amount: 500, category: "Transport" });
-            model.addExpense({ name: "Кино", amount: 700, category: "Entertainment" });
-            presenter.updateView();
-        }, 100);
+        console.log('Приложение учета расходов успешно запущено с моковыми данными');
 
     } catch (error) {
         console.error('Ошибка при запуске приложения:', error);

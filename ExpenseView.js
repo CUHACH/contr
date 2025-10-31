@@ -1,4 +1,4 @@
-class ExpenseView {
+export class ExpenseView {
     constructor() {
         this.app = document.getElementById('app');
         this.categoryLabels = {
