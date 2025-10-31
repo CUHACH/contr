@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         presenter.updateView();
 
-        console.log('Приложение учета расходов успешно запущено с моковыми данными');
-
     } catch (error) {
         console.error('Ошибка при запуске приложения:', error);
         alert('Произошла ошибка при загрузке приложения. Пожалуйста, обновите страницу.');
